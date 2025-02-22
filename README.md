@@ -121,6 +121,33 @@ With this model, I can:
 
 ---
 
+## 🚀 Optimization Approach: Balancing Power Query and DAX
+
+In this project, I optimized the Power BI report size and performance by strategically balancing **Power Query** and **DAX**. Let me walk you through the approach and why this balance is essential!
+
+### ⚡ Why Use Both Power Query and DAX?
+
+- **Power Query:** Ideal for data transformation, creating static calculated columns, and handling heavy data processing before the data reaches the model. But relying entirely on Power Query can increase the file size significantly.
+- **DAX:** Perfect for dynamic calculations, aggregations, and measures that change based on user interactions. However, too many DAX calculations can slow down report performance, especially on large datasets.
+
+### ⚖️ My Approach
+
+- **Pre-processing in Power Query:**  
+  I used Power Query to generate columns that don't need to change dynamically — like product categories, fiscal periods, and certain cost groupings. By performing these transformations in Power Query, I reduced the load on DAX and optimized the data model.
+
+- **Dynamic Calculations with DAX:**  
+  For calculations that needed to adjust based on user selections (like Year-to-Date Sales or Market Share %), I wrote DAX measures. This kept my visualizations responsive and avoided unnecessary data bloat.
+
+### 📉 Impact of This Optimization
+
+- **Reduced File Size:** By offloading static transformations to Power Query, the overall PBIX file size became more manageable.
+- **Faster Report Performance:** Dynamic metrics powered by DAX ran faster because the base data was already cleaned and organized.
+- **Scalability:** The model handled larger datasets smoothly, making it ready for future data expansion without significant slowdowns.
+
+This hybrid approach made my report lean, fast, and scalable — delivering insights without compromising performance! 🚀
+
+---
+
 ## DAX Measures
 
 To bring the data to life, I created over **30 DAX measures** that power the dashboard's visuals and calculations. These measures help aggregate, calculate, and analyze critical financial metrics, making the report dynamic and flexible for user interactions. Let’s break them down!
